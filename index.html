@@ -3,96 +3,1264 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vishal Sewtech | Industrial Sewing Machines</title>
-<link rel="stylesheet" href="style.css">
-</head>
+<title>Vishal Sewtech – Industrial Sewing Machines | Delhi NCR</title>
+<meta name="description" content="Vishal Sewtech – Authorised dealer of Jack industrial sewing machines in Delhi NCR. Serving export houses and garment factories since 1999.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#0d2041;
+  --navy2:#142852;
+  --gold:#c8941a;
+  --gold-light:#e8b830;
+  --white:#ffffff;
+  --light:#f4f7fb;
+  --gray:#6b7a99;
+  --border:#dde3ef;
+  --text:#1a2540;
+  --shadow:0 4px 24px rgba(13,32,65,0.10);
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Sans 3',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}
 
+/* ── TOP BAR ── */
+.topbar{background:var(--navy);padding:7px 0;font-size:13px;color:rgba(255,255,255,0.85);}
+.topbar .tb-inner{max-width:1200px;margin:auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;}
+.topbar a{color:rgba(255,255,255,0.85);text-decoration:none;margin-left:18px;transition:color .2s;}
+.topbar a:hover{color:var(--gold-light);}
+.topbar .tb-contact{display:flex;align-items:center;gap:4px;}
+.topbar .tb-contact i{color:var(--gold);font-size:12px;}
+
+/* ── HEADER ── */
+header{background:var(--white);box-shadow:0 2px 16px rgba(13,32,65,0.09);position:sticky;top:0;z-index:999;}
+.header-inner{max-width:1200px;margin:auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:74px;}
+.logo{display:flex;align-items:center;text-decoration:none;}
+.logo-icon{width:48px;height:48px;background:var(--navy);border-radius:8px;display:flex;align-items:center;justify-content:center;}
+.logo-icon svg{width:30px;height:30px;}
+.logo-text .brand{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--navy);line-height:1.1;}
+.logo-text .tagline{font-size:11px;color:var(--gray);letter-spacing:.5px;text-transform:uppercase;}
+
+/* NAV */
+nav{display:flex;align-items:center;gap:4px;}
+.nav-link{font-size:14px;font-weight:600;color:var(--navy);padding:10px 14px;border-radius:6px;text-decoration:none;transition:all .2s;cursor:pointer;border:none;background:none;position:relative;}
+.nav-link:hover,.nav-link.active{color:var(--gold);background:rgba(200,148,26,0.06);}
+.has-dropdown{position:relative;}
+.has-dropdown .arrow{font-size:10px;margin-left:4px;transition:transform .25s;}
+.has-dropdown:hover .arrow{transform:rotate(180deg);}
+.dropdown{position:absolute;top:calc(100% + 8px);left:0;min-width:260px;background:var(--white);border:1px solid var(--border);border-radius:10px;box-shadow:0 12px 40px rgba(13,32,65,0.14);opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .25s;z-index:1000;}
+.has-dropdown:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0);}
+.dropdown-section{padding:8px 0;}
+.dropdown-section + .dropdown-section{border-top:1px solid var(--border);}
+.dropdown-label{font-size:10px;font-weight:700;letter-spacing:1px;color:var(--gray);text-transform:uppercase;padding:8px 18px 4px;}
+.dropdown a{display:flex;align-items:center;gap:8px;padding:9px 18px;font-size:13.5px;color:var(--text);text-decoration:none;transition:all .2s;cursor:pointer;}
+.dropdown a:hover{background:var(--light);color:var(--gold);}
+.dropdown a i{width:16px;color:var(--gold);font-size:12px;}
+
+.header-cta{display:flex;align-items:center;gap:10px;}
+.btn-call{background:var(--navy);color:var(--white);padding:9px 18px;border-radius:7px;font-size:13px;font-weight:600;text-decoration:none;transition:all .2s;border:none;cursor:pointer;}
+.btn-call:hover{background:var(--navy2);transform:translateY(-1px);}
+.btn-wa{background:#25D366;color:var(--white);padding:9px 18px;border-radius:7px;font-size:13px;font-weight:600;text-decoration:none;transition:all .2s;display:flex;align-items:center;gap:6px;}
+.btn-wa:hover{background:#1ebe5d;transform:translateY(-1px);}
+.hamburger{display:none;background:none;border:none;cursor:pointer;color:var(--navy);font-size:22px;}
+
+/* ── PAGES ── */
+.page{display:none;}
+.page.active{display:block;}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#1a3768 60%,#0d2041 100%);padding:80px 20px;position:relative;overflow:hidden;min-height:540px;display:flex;align-items:center;}
+.hero::before{content:'';position:absolute;right:-100px;top:-100px;width:600px;height:600px;border-radius:50%;background:rgba(200,148,26,0.06);pointer-events:none;}
+.hero::after{content:'';position:absolute;left:-60px;bottom:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.03);pointer-events:none;}
+.hero-inner{max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(200,148,26,0.15);border:1px solid rgba(200,148,26,0.35);border-radius:100px;padding:5px 14px;font-size:12px;font-weight:600;color:var(--gold-light);margin-bottom:20px;letter-spacing:.5px;}
+.hero h1{font-family:'Playfair Display',serif;font-size:46px;line-height:1.18;color:var(--white);margin-bottom:20px;}
+.hero h1 span{color:var(--gold-light);}
+.hero p{font-size:17px;line-height:1.7;color:rgba(255,255,255,0.75);margin-bottom:32px;max-width:480px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-primary{background:var(--gold);color:var(--white);padding:13px 28px;border-radius:8px;font-size:15px;font-weight:700;text-decoration:none;transition:all .25s;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,148,26,0.35);}
+.btn-outline{border:2px solid rgba(255,255,255,0.4);color:var(--white);padding:13px 28px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;transition:all .25s;cursor:pointer;background:transparent;display:inline-flex;align-items:center;gap:8px;}
+.btn-outline:hover{border-color:var(--white);background:rgba(255,255,255,0.08);}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px;}
+.stat-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:18px;text-align:center;}
+.stat-card .number{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--gold-light);}
+.stat-card .label{font-size:12px;color:rgba(255,255,255,0.65);margin-top:4px;text-transform:uppercase;letter-spacing:.5px;}
+.hero-visual{position:relative;display:flex;justify-content:center;align-items:center;}
+.hero-machine{width:100%;max-width:420px;filter:drop-shadow(0 20px 60px rgba(0,0,0,0.4));}
+
+/* ── TRUST BAR ── */
+.trust-bar{background:var(--gold);padding:18px 20px;}
+.trust-inner{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-around;gap:20px;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:10px;color:var(--navy);font-weight:700;font-size:14px;}
+.trust-item i{font-size:20px;}
+
+/* ── SECTION COMMON ── */
+section{padding:72px 20px;}
+.section-inner{max-width:1200px;margin:auto;}
+.section-header{text-align:center;margin-bottom:50px;}
+.section-tag{display:inline-block;background:rgba(200,148,26,0.1);color:var(--gold);font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:14px;}
+.section-header h2{font-family:'Playfair Display',serif;font-size:36px;color:var(--navy);margin-bottom:14px;}
+.section-header p{font-size:17px;color:var(--gray);max-width:580px;margin:auto;line-height:1.6;}
+
+/* ── PRODUCT CATEGORIES ── */
+.categories{background:var(--light);}
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.cat-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:28px 20px;text-align:center;cursor:pointer;transition:all .25s;text-decoration:none;color:var(--text);}
+.cat-card:hover{border-color:var(--gold);box-shadow:0 8px 28px rgba(200,148,26,0.12);transform:translateY(-4px);}
+.cat-icon{width:60px;height:60px;background:var(--navy);border-radius:12px;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;}
+.cat-icon i{color:var(--gold);font-size:24px;}
+.cat-card h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;}
+.cat-card p{font-size:13px;color:var(--gray);line-height:1.5;}
+.cat-card .cat-count{font-size:12px;color:var(--gold);font-weight:700;margin-top:10px;}
+
+/* ── FEATURED PRODUCTS ── */
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.prod-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:all .25s;cursor:pointer;}
+.prod-card:hover{border-color:var(--gold);box-shadow:var(--shadow);transform:translateY(-4px);}
+.prod-img{background:var(--light);height:200px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.prod-img svg{width:120px;height:120px;opacity:.7;}
+.prod-badge{position:absolute;top:12px;left:12px;background:var(--navy);color:var(--white);font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px;}
+.prod-body{padding:20px;}
+.prod-body .category{font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.prod-body h3{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.35;}
+.prod-body p{font-size:13.5px;color:var(--gray);line-height:1.55;margin-bottom:16px;}
+.prod-body .fabric-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;}
+.fabric-tag{background:rgba(200,148,26,0.1);color:var(--gold);font-size:11px;font-weight:600;padding:3px 10px;border-radius:100px;border:1px solid rgba(200,148,26,0.25);}
+.btn-inquiry{width:100%;background:var(--navy);color:var(--white);border:none;padding:11px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;}
+.btn-inquiry:hover{background:var(--gold);}
+
+/* ── FABRIC GUIDE ── */
+.fabric-section{background:var(--navy);}
+.fabric-section .section-header h2{color:var(--white);}
+.fabric-section .section-header p{color:rgba(255,255,255,0.65);}
+.fabric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.fabric-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:26px;}
+.fabric-card .fabric-name{font-family:'Playfair Display',serif;font-size:20px;color:var(--gold-light);margin-bottom:8px;}
+.fabric-card .fabric-desc{font-size:14px;color:rgba(255,255,255,0.65);margin-bottom:16px;line-height:1.6;}
+.fabric-card .machine-rec{display:flex;flex-direction:column;gap:8px;}
+.machine-rec-item{background:rgba(255,255,255,0.08);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px;}
+.machine-rec-item i{color:var(--gold);font-size:13px;flex-shrink:0;}
+.machine-rec-item span{font-size:13px;color:rgba(255,255,255,0.85);}
+
+/* ── WHY CHOOSE US ── */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.why-card{text-align:center;padding:32px 24px;background:var(--white);border:1px solid var(--border);border-radius:12px;transition:all .25s;}
+.why-card:hover{border-color:var(--gold);box-shadow:0 8px 28px rgba(200,148,26,0.1);}
+.why-icon{width:64px;height:64px;background:var(--light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;}
+.why-icon i{color:var(--navy);font-size:26px;}
+.why-card h3{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);margin-bottom:10px;}
+.why-card p{font-size:14px;color:var(--gray);line-height:1.65;}
+
+/* ── INQUIRY SECTION ── */
+.inquiry-section{background:var(--light);}
+.inquiry-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.inquiry-form-box{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:40px;}
+.inquiry-form-box h2{font-family:'Playfair Display',serif;font-size:28px;color:var(--navy);margin-bottom:8px;}
+.inquiry-form-box p{font-size:15px;color:var(--gray);margin-bottom:28px;}
+.form-group{margin-bottom:18px;}
+.form-group label{display:block;font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;letter-spacing:.3px;}
+.form-group input,.form-group select,.form-group textarea{width:100%;border:1.5px solid var(--border);border-radius:8px;padding:11px 14px;font-size:14px;font-family:inherit;color:var(--text);background:var(--white);transition:border .2s;outline:none;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold);}
+.form-group textarea{resize:vertical;min-height:120px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.btn-submit{width:100%;background:var(--navy);color:var(--white);border:none;padding:14px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:8px;}
+.btn-submit:hover{background:var(--gold);transform:translateY(-2px);}
+.contact-info-panel h3{font-family:'Playfair Display',serif;font-size:26px;color:var(--navy);margin-bottom:24px;}
+.contact-item{display:flex;gap:16px;margin-bottom:24px;align-items:flex-start;}
+.contact-icon{width:48px;height:48px;background:var(--navy);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.contact-icon i{color:var(--gold);font-size:18px;}
+.contact-item .ci-text .label{font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--gray);margin-bottom:4px;}
+.contact-item .ci-text .value{font-size:16px;color:var(--navy);font-weight:600;}
+.contact-item .ci-text a{color:var(--navy);text-decoration:none;}
+.contact-item .ci-text a:hover{color:var(--gold);}
+.wa-cta{background:var(--navy);border-radius:12px;padding:24px;margin-top:28px;text-align:center;}
+.wa-cta h4{color:var(--white);font-size:17px;font-weight:700;margin-bottom:8px;}
+.wa-cta p{color:rgba(255,255,255,0.65);font-size:14px;margin-bottom:16px;}
+.btn-wa-big{background:#25D366;color:var(--white);padding:12px 28px;border-radius:8px;font-size:15px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .2s;}
+.btn-wa-big:hover{background:#1ebe5d;transform:translateY(-2px);}
+
+/* ── TESTIMONIALS ── */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.testi-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:28px;}
+.testi-stars{color:var(--gold);font-size:14px;margin-bottom:14px;}
+.testi-text{font-size:15px;color:var(--gray);line-height:1.7;margin-bottom:20px;font-style:italic;}
+.testi-author{display:flex;align-items:center;gap:12px;}
+.testi-avatar{width:44px;height:44px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);}
+.testi-name{font-weight:700;color:var(--navy);font-size:15px;}
+.testi-role{font-size:12px;color:var(--gray);}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);padding:60px 20px 24px;}
+.footer-inner{max-width:1200px;margin:auto;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:48px;margin-bottom:48px;}
+.footer-brand .brand-name{font-family:'Playfair Display',serif;font-size:22px;color:var(--white);margin-bottom:10px;}
+.footer-brand p{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:280px;}
+.footer-heading{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+.footer-links{list-style:none;}
+.footer-links li{margin-bottom:10px;}
+.footer-links a{font-size:14px;color:rgba(255,255,255,0.65);text-decoration:none;cursor:pointer;transition:color .2s;}
+.footer-links a:hover{color:var(--gold);}
+.footer-contact-item{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start;}
+.footer-contact-item i{color:var(--gold);font-size:13px;margin-top:3px;}
+.footer-contact-item span{font-size:13.5px;color:rgba(255,255,255,0.7);line-height:1.5;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.footer-bottom p{font-size:13px;color:rgba(255,255,255,0.4);}
+
+/* ── FLOATING BUTTONS ── */
+.floating-btns{position:fixed;bottom:28px;right:24px;display:flex;flex-direction:column;gap:12px;z-index:998;}
+.float-btn{width:56px;height:56px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--white);transition:all .25s;text-decoration:none;box-shadow:0 4px 20px rgba(0,0,0,0.25);}
+.float-btn:hover{transform:scale(1.1) translateY(-2px);}
+.float-wa{background:#25D366;}
+.float-call{background:var(--navy);}
+.float-tooltip{position:absolute;right:64px;background:var(--navy);color:var(--white);font-size:12px;font-weight:600;padding:5px 10px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s;}
+.float-btn:hover .float-tooltip{opacity:1;}
+
+/* ── PRODUCT DETAIL PAGE ── */
+.page-hero{background:linear-gradient(135deg,var(--navy) 0%,#1a3768 100%);padding:50px 20px;text-align:center;}
+.page-hero .breadcrumb{font-size:13px;color:rgba(255,255,255,0.55);margin-bottom:12px;}
+.page-hero .breadcrumb a{color:rgba(255,255,255,0.55);text-decoration:none;cursor:pointer;}
+.page-hero .breadcrumb a:hover{color:var(--gold-light);}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:40px;color:var(--white);margin-bottom:12px;}
+.page-hero p{font-size:17px;color:rgba(255,255,255,0.7);max-width:600px;margin:auto;}
+
+/* PRODUCT LISTING PAGE */
+.product-listing{padding:60px 20px;background:var(--light);}
+.prod-list-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+
+/* ── ABOUT PAGE ── */
+.about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.about-visual{position:relative;}
+.about-img-box{background:linear-gradient(135deg,var(--navy),#1a3768);border-radius:16px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;}
+.about-img-box svg{width:200px;height:200px;opacity:.6;}
+.about-stat-overlay{position:absolute;bottom:-24px;right:-24px;background:var(--gold);border-radius:12px;padding:22px 28px;text-align:center;}
+.about-stat-overlay .num{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--white);}
+.about-stat-overlay .lbl{font-size:13px;color:rgba(255,255,255,0.85);font-weight:600;}
+.about-content h2{font-family:'Playfair Display',serif;font-size:36px;color:var(--navy);margin-bottom:16px;}
+.about-content p{font-size:16px;color:var(--gray);line-height:1.75;margin-bottom:16px;}
+.about-points{margin-top:24px;display:flex;flex-direction:column;gap:12px;}
+.about-point{display:flex;align-items:flex-start;gap:12px;}
+.about-point i{color:var(--gold);font-size:16px;margin-top:2px;flex-shrink:0;}
+.about-point span{font-size:15px;color:var(--text);}
+
+/* ── MODAL ── */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:1200;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .25s;}
+.modal-overlay.open{opacity:1;pointer-events:all;}
+.modal{background:var(--white);border-radius:16px;padding:40px;max-width:520px;width:100%;position:relative;transform:translateY(16px);transition:transform .25s;}
+.modal-overlay.open .modal{transform:translateY(0);}
+.modal-close{position:absolute;top:16px;right:16px;background:none;border:none;font-size:22px;cursor:pointer;color:var(--gray);}
+.modal h3{font-family:'Playfair Display',serif;font-size:24px;color:var(--navy);margin-bottom:8px;}
+.modal .prod-name{font-size:14px;color:var(--gold);font-weight:600;margin-bottom:20px;}
+
+/* ── UTILS ── */
+.text-gold{color:var(--gold);}
+.text-navy{color:var(--navy);}
+.mt-40{margin-top:40px;}
+.center{text-align:center;}
+.full-w-btn{display:block;margin:40px auto 0;width:fit-content;}
+
+/* ── MOBILE ── */
+@media(max-width:900px){
+  .hero-inner,.inquiry-wrap,.about-wrap{grid-template-columns:1fr;}
+  .hero h1{font-size:32px;}
+  .hero-visual{display:none;}
+  .cat-grid{grid-template-columns:repeat(2,1fr);}
+  .prod-grid,.prod-list-grid,.fabric-grid,.why-grid,.testi-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  nav{display:none;}
+  .hamburger{display:block;}
+  .header-cta .btn-wa{display:none;}
+}
+@media(max-width:600px){
+  .footer-grid{grid-template-columns:1fr;}
+  .cat-grid{grid-template-columns:1fr;}
+  .hero-stats{grid-template-columns:repeat(3,1fr);}
+  .form-row{grid-template-columns:1fr;}
+  .about-stat-overlay{position:static;margin-top:20px;}
+}
+</style>
+</head>
 <body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="tb-inner">
+    <div>🏭 Authorised Dealer – Jack Industrial Sewing Machines | Serving Delhi NCR since 1999</div>
+    <div style="display:flex;align-items:center;">
+      <span class="tb-contact"><i class="fa fa-phone"></i>&nbsp;<a href="tel:9811100482">98111 00482</a></span>
+      <span class="tb-contact"><i class="fa fa-phone"></i>&nbsp;<a href="tel:9266861448">92668 61448</a></span>
+      <span class="tb-contact"><i class="fab fa-whatsapp" style="color:#25D366;"></i>&nbsp;<a href="https://wa.me/919266861448" target="_blank">WhatsApp Us</a></span>
+    </div>
+  </div>
+</div>
 
 <!-- HEADER -->
 <header>
-  <div class="logo">VISHAL SEWTECH</div>
-  <nav>
-    <ul>
-      <li>Home</li>
-      <li>Machines
-        <ul class="dropdown">
-          <li>Lockstitch</li>
-          <li>Overlock</li>
-          <li>Interlock</li>
-          <li>Automatic</li>
-        </ul>
-      </li>
-      <li>Contact</li>
-    </ul>
-  </nav>
+  <div class="header-inner">
+    <a href="#" onclick="showPage('home')" style="display:flex;align-items:center;text-decoration:none;cursor:pointer;">
+      <img src="data:image/png;base64,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" alt="Vishal Sewtech Logo" style="height:54px;width:auto;object-fit:contain;">
+    </a>
+    <nav>
+      <a class="nav-link" onclick="showPage('home')" id="nav-home">Home</a>
+      <div class="has-dropdown">
+        <a class="nav-link" id="nav-products">Products <i class="fas fa-chevron-down arrow"></i></a>
+        <div class="dropdown">
+          <div class="dropdown-section">
+            <div class="dropdown-label">Sewing Machines</div>
+            <a onclick="showProductCat('jack-sewing')"><i class="fas fa-cog"></i>Jack Sewing Machine</a>
+            <a onclick="showProductCat('industrial-sewing')"><i class="fas fa-industry"></i>Industrial Sewing Machine</a>
+            <a onclick="showProductCat('stitching')"><i class="fas fa-thread"></i>Stitching Machine</a>
+            <a onclick="showProductCat('overlock')"><i class="fas fa-circle-notch"></i>Overlock Machine</a>
+            <a onclick="showProductCat('interlock')"><i class="fas fa-link"></i>Interlock Machine</a>
+          </div>
+          <div class="dropdown-section">
+            <div class="dropdown-label">Specialty Machines</div>
+            <a onclick="showProductCat('button-hole')"><i class="fas fa-dot-circle"></i>Button Hole Machine</a>
+            <a onclick="showProductCat('bartack')"><i class="fas fa-bars"></i>Bartack Machine</a>
+            <a onclick="showProductCat('smocking')"><i class="fas fa-wave-square"></i>Smocking Machine</a>
+            <a onclick="showProductCat('special')"><i class="fas fa-star"></i>Special Purpose Machine</a>
+          </div>
+          <div class="dropdown-section">
+            <div class="dropdown-label">Cutting & Finishing</div>
+            <a onclick="showProductCat('cutting')"><i class="fas fa-cut"></i>Cutting Machine</a>
+            <a onclick="showProductCat('needle-detector')"><i class="fas fa-search"></i>Needle Detector</a>
+            <a onclick="showProductCat('pressing')"><i class="fas fa-fire"></i>Pressing Machine</a>
+            <a onclick="showPage('products')"><i class="fas fa-th"></i><b>View All Products</b></a>
+          </div>
+        </div>
+      </div>
+      <a class="nav-link" onclick="showPage('fabric-guide')" id="nav-fabric">Fabric Guide</a>
+      <a class="nav-link" onclick="showPage('about')" id="nav-about">About Us</a>
+      <a class="nav-link" onclick="showPage('contact')" id="nav-contact">Contact Us</a>
+    </nav>
+    <div class="header-cta">
+      <a href="tel:9811100482" class="btn-call"><i class="fas fa-phone"></i> Call Now</a>
+      <a href="https://wa.me/919266861448" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+    <button class="hamburger" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+  </div>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <h1>Industrial Sewing Machines That Power Your Production</h1>
-  <p>Trusted by 500+ factories across Delhi NCR</p>
-
-  <div class="cta">
-    <a href="tel:9811100482" class="btn">Call Now</a>
-    <a href="https://wa.me/919266861448" class="btn whatsapp">WhatsApp</a>
+<!-- MOBILE MENU -->
+<div id="mobileMenu" style="display:none;background:var(--white);border-bottom:1px solid var(--border);padding:16px 20px;position:sticky;top:72px;z-index:990;">
+  <div style="display:flex;flex-direction:column;gap:4px;">
+    <a style="padding:10px;font-weight:600;color:var(--navy);cursor:pointer;" onclick="showPage('home');toggleMobileMenu()">Home</a>
+    <a style="padding:10px;font-weight:600;color:var(--navy);cursor:pointer;" onclick="showPage('products');toggleMobileMenu()">All Products</a>
+    <a style="padding:10px;font-weight:600;color:var(--navy);cursor:pointer;" onclick="showPage('fabric-guide');toggleMobileMenu()">Fabric Guide</a>
+    <a style="padding:10px;font-weight:600;color:var(--navy);cursor:pointer;" onclick="showPage('about');toggleMobileMenu()">About Us</a>
+    <a style="padding:10px;font-weight:600;color:var(--navy);cursor:pointer;" onclick="showPage('contact');toggleMobileMenu()">Contact Us</a>
+    <div style="display:flex;gap:10px;margin-top:10px;">
+      <a href="tel:9811100482" class="btn-call" style="flex:1;text-align:center;">Call Now</a>
+      <a href="https://wa.me/919266861448" target="_blank" class="btn-wa" style="flex:1;justify-content:center;">WhatsApp</a>
+    </div>
   </div>
-</section>
+</div>
 
-<!-- TRUST -->
-<section class="trust">
-  <h2>Why Vishal Sewtech?</h2>
-  <div class="grid">
-    <div>24+ Years Experience</div>
-    <div>500+ Clients</div>
-    <div>In-house Service Centre</div>
-    <div>Delhi NCR Coverage</div>
+<!-- ══ HOME PAGE ══ -->
+<div id="page-home" class="page active">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge"><i class="fas fa-certificate"></i>&nbsp;Authorised Jack Machines Dealer · Delhi NCR</div>
+        <h1>Premium Industrial<br><span>Sewing Machines</span><br>for Your Factory</h1>
+        <p>Supplying export houses and garment factories across Delhi NCR with genuine Jack industrial sewing machines. 25+ years of trusted service, expert guidance, and after-sales support.</p>
+        <div class="hero-btns">
+          <button class="btn-primary" onclick="showPage('contact')"><i class="fas fa-paper-plane"></i> Get Free Quote</button>
+          <button class="btn-outline" onclick="showPage('products')"><i class="fas fa-th"></i> View Products</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-card"><div class="number">25+</div><div class="label">Years Experience</div></div>
+          <div class="stat-card"><div class="number">500+</div><div class="label">Happy Clients</div></div>
+          <div class="stat-card"><div class="number">30+</div><div class="label">Machine Types</div></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <svg class="hero-machine" viewBox="0 0 400 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Industrial Sewing Machine Illustration -->
+          <rect x="40" y="220" width="320" height="80" rx="10" fill="rgba(255,255,255,0.08)" stroke="rgba(200,148,26,0.4)" stroke-width="1.5"/>
+          <rect x="60" y="140" width="200" height="90" rx="8" fill="rgba(255,255,255,0.1)" stroke="rgba(200,148,26,0.5)" stroke-width="1.5"/>
+          <rect x="70" y="60" width="30" height="90" rx="6" fill="rgba(255,255,255,0.08)" stroke="rgba(200,148,26,0.4)" stroke-width="1.5"/>
+          <rect x="100" y="80" width="120" height="20" rx="4" fill="rgba(200,148,26,0.2)" stroke="rgba(200,148,26,0.6)" stroke-width="1"/>
+          <circle cx="85" cy="55" r="20" fill="rgba(200,148,26,0.1)" stroke="rgba(200,148,26,0.5)" stroke-width="2"/>
+          <circle cx="85" cy="55" r="12" fill="rgba(200,148,26,0.2)" stroke="rgba(200,148,26,0.7)" stroke-width="1.5"/>
+          <circle cx="85" cy="55" r="5" fill="#c8941a"/>
+          <line x1="85" y1="35" x2="85" y2="75" stroke="rgba(200,148,26,0.5)" stroke-width="1" stroke-dasharray="3,3"/>
+          <line x1="65" y1="55" x2="105" y2="55" stroke="rgba(200,148,26,0.5)" stroke-width="1" stroke-dasharray="3,3"/>
+          <rect x="260" y="130" width="80" height="100" rx="8" fill="rgba(255,255,255,0.08)" stroke="rgba(200,148,26,0.4)" stroke-width="1.5"/>
+          <rect x="270" y="155" width="60" height="8" rx="2" fill="rgba(200,148,26,0.3)"/>
+          <rect x="270" y="170" width="40" height="8" rx="2" fill="rgba(200,148,26,0.2)"/>
+          <rect x="270" y="185" width="50" height="8" rx="2" fill="rgba(200,148,26,0.2)"/>
+          <line x1="145" y1="230" x2="145" y2="280" stroke="rgba(200,148,26,0.6)" stroke-width="2"/>
+          <circle cx="145" cy="285" r="6" fill="rgba(200,148,26,0.4)" stroke="rgba(200,148,26,0.8)" stroke-width="1.5"/>
+          <text x="200" y="320" text-anchor="middle" fill="rgba(200,148,26,0.5)" font-size="11" font-family="sans-serif" letter-spacing="2">JACK · INDUSTRIAL SERIES</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-inner">
+      <div class="trust-item"><i class="fas fa-check-circle"></i>Genuine Jack Machines</div>
+      <div class="trust-item"><i class="fas fa-tools"></i>After-Sales Service & AMC</div>
+      <div class="trust-item"><i class="fas fa-shipping-fast"></i>Prompt Delivery Delhi NCR</div>
+      <div class="trust-item"><i class="fas fa-headset"></i>Expert Technical Support</div>
+      <div class="trust-item"><i class="fas fa-award"></i>ISO Certified Products</div>
+    </div>
   </div>
-</section>
 
-<!-- PRODUCTS -->
-<section class="products">
-  <h2>Our Machines</h2>
+  <!-- PRODUCT CATEGORIES -->
+  <section class="categories">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-tag">Our Product Range</div>
+        <h2>Industrial Machines for Every Need</h2>
+        <p>From basic lockstitch to fully computerized overlock systems — we supply the complete Jack machinery lineup for all types of garment production.</p>
+      </div>
+      <div class="cat-grid">
+        <div class="cat-card" onclick="showProductCat('jack-sewing')">
+          <div class="cat-icon"><i class="fas fa-cog"></i></div>
+          <h3>Jack Sewing Machine</h3>
+          <p>Computerized & direct-drive sewing machines for high-speed production</p>
+          <div class="cat-count">↗ 10+ Models</div>
+        </div>
+        <div class="cat-card" onclick="showProductCat('overlock')">
+          <div class="cat-icon"><i class="fas fa-circle-notch"></i></div>
+          <h3>Overlock Machine</h3>
+          <p>4-thread & 5-thread overlock for clean, professional fabric edges</p>
+          <div class="cat-count">↗ 5+ Models</div>
+        </div>
+        <div class="cat-card" onclick="showProductCat('cutting')">
+          <div class="cat-icon"><i class="fas fa-cut"></i></div>
+          <h3>Cutting Machine</h3>
+          <p>Multi-ply cutters, band knife & straight knife cutting solutions</p>
+          <div class="cat-count">↗ 6+ Models</div>
+        </div>
+        <div class="cat-card" onclick="showProductCat('button-hole')">
+          <div class="cat-icon"><i class="fas fa-dot-circle"></i></div>
+          <h3>Button Hole Machine</h3>
+          <p>Automatic buttonhole & eyelet machines for shirts, trousers & jackets</p>
+          <div class="cat-count">↗ 4+ Models</div>
+        </div>
+        <div class="cat-card" onclick="showProductCat('bartack')">
+          <div class="cat-icon"><i class="fas fa-bars"></i></div>
+          <h3>Bartack Machine</h3>
+          <p>Computerized bartack for belt loops, pocket openings and stress points</p>
+          <div class="cat-count">↗ 3+ Models</div>
+        </div>
+        <div class="cat-card" onclick="showProductCat('interlock')">
+          <div class="cat-icon"><i class="fas fa-link"></i></div>
+          <h3>Interlock Machine</h3>
+          <p>For knitwear, sportswear & stretchable fabric — clean & durable seams</p>
+          <div class="cat-count">↗ 4+ Models</div>
+        </div>
+        <div class="cat-card" onclick="showProductCat('smocking')">
+          <div class="cat-icon"><i class="fas fa-wave-square"></i></div>
+          <h3>Smocking Machine</h3>
+          <p>Multi-needle smocking machines for embroidery & decorative stitching</p>
+          <div class="cat-count">↗ 3+ Models</div>
+        </div>
+        <div class="cat-card" onclick="showProductCat('special')">
+          <div class="cat-icon"><i class="fas fa-star"></i></div>
+          <h3>Special Purpose</h3>
+          <p>Template sewing, feed-off-arm, seam sealing & other specialty machines</p>
+          <div class="cat-count">↗ 8+ Models</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <div class="product-card">
-    <img src="images/product1.png">
-    <h3>Jack W4D Interlock</h3>
-    <p>Best for T-Shirts & Sportswear</p>
-    <a href="#" class="btn">Get Latest Price</a>
+  <!-- FEATURED PRODUCTS -->
+  <section>
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-tag">Featured Products</div>
+        <h2>Most Popular Jack Machines</h2>
+        <p>Top-selling industrial sewing machines trusted by garment factories and export houses across Delhi NCR.</p>
+      </div>
+      <div class="prod-grid" id="featured-products"></div>
+      <div class="center mt-40">
+        <button class="btn-primary" onclick="showPage('products')"><i class="fas fa-th"></i> View All Products</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FABRIC GUIDE TEASER -->
+  <section class="fabric-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-tag" style="background:rgba(200,148,26,0.2);color:var(--gold-light);">Fabric Guide</div>
+        <h2>Which Machine for Which Fabric?</h2>
+        <p style="color:rgba(255,255,255,0.65);">Not sure which machine suits your fabric type? Our experts guide you to the right machine for maximum efficiency and quality output.</p>
+      </div>
+      <div class="fabric-grid">
+        <div class="fabric-card">
+          <div class="fabric-name">Cotton & Woven Fabrics</div>
+          <div class="fabric-desc">Shirts, trousers, kurtas, formal wear & export garments made from cotton, linen, poplin, twill.</div>
+          <div class="machine-rec">
+            <div class="machine-rec-item"><i class="fas fa-check"></i><span>Jack F5 / A4 Lockstitch – main seaming</span></div>
+            <div class="machine-rec-item"><i class="fas fa-check"></i><span>E4s Overlock – edge finishing</span></div>
+            <div class="machine-rec-item"><i class="fas fa-check"></i><span>JK-T781G – buttonholes</span></div>
+          </div>
+        </div>
+        <div class="fabric-card">
+          <div class="fabric-name">Knit & Stretchable Fabrics</div>
+          <div class="fabric-desc">T-shirts, leggings, innerwear, sportswear & activewear from jersey, lycra, spandex blends.</div>
+          <div class="machine-rec">
+            <div class="machine-rec-item"><i class="fas fa-check"></i><span>Jack W4D Interlock – main seam</span></div>
+            <div class="machine-rec-item"><i class="fas fa-check"></i><span>C4 Overlock – 4-thread for stretch</span></div>
+            <div class="machine-rec-item"><i class="fas fa-check"></i><span>Feed-Off-Arm – tubular seaming</span></div>
+          </div>
+        </div>
+        <div class="fabric-card">
+          <div class="fabric-name">Heavy Fabrics & Denim</div>
+          <div class="fabric-desc">Jeans, canvas bags, jackets, upholstery & heavy-duty industrial textiles.</div>
+          <div class="machine-rec">
+            <div class="machine-rec-item"><i class="fas fa-check"></i><span>H2 Heavy Duty Lockstitch</span></div>
+            <div class="machine-rec-item"><i class="fas fa-check"></i><span>JK-58450 Double Needle – flat seams</span></div>
+            <div class="machine-rec-item"><i class="fas fa-check"></i><span>JK-T1900G Bartack – stress points</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="center mt-40">
+        <button class="btn-primary" onclick="showPage('fabric-guide')"><i class="fas fa-book-open"></i> Full Fabric Guide</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section>
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-tag">Why Choose Us</div>
+        <h2>Delhi NCR's Trusted Sewing Machine Partner</h2>
+        <p>Factory owners and export houses across Delhi, Noida, Gurgaon and Faridabad rely on Vishal Sewtech for machines that never let them down.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-certificate"></i></div>
+          <h3>Authorised Jack Dealer</h3>
+          <p>We are an authorised distributor of Jack Sewing Machines (China) — every machine comes with a valid warranty and genuine spare parts support.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-history"></i></div>
+          <h3>25+ Years in Business</h3>
+          <p>Established in 1999, Vishal Sewtech has served hundreds of garment factories and export houses with reliability and deep industry knowledge.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-tools"></i></div>
+          <h3>Expert After-Sales Service</h3>
+          <p>Our trained technicians are available for installation, training, and annual maintenance contracts (AMC) across Delhi NCR.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-compass"></i></div>
+          <h3>Right Machine Guidance</h3>
+          <p>We guide you to choose the exact machine model for your fabric type, production volume and budget — no guesswork, no upselling.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-shipping-fast"></i></div>
+          <h3>Fast Delivery & Installation</h3>
+          <p>Prompt delivery and on-site installation across Delhi, Noida, Gurgaon, Faridabad and Ghaziabad. Minimal downtime for your production line.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="fas fa-handshake"></i></div>
+          <h3>Competitive Pricing</h3>
+          <p>Direct importer pricing with no middlemen. Flexible payment terms, EMI options, and bulk order discounts for export houses and large factories.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section style="background:var(--light);">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-tag">Client Testimonials</div>
+        <h2>Trusted by Delhi NCR's Garment Industry</h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"We purchased 15 Jack F5 machines from Vishal Sewtech for our export unit. Excellent quality, on-time delivery, and the after-sales support is outstanding. Highly recommend."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">R</div>
+            <div><div class="testi-name">Rajesh Sharma</div><div class="testi-role">Export House Owner, Okhla, Delhi</div></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Vishal ji guided us to the right overlock machines for our knitwear factory. The machines are running smoothly for 2 years now. Great service and genuine products."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">A</div>
+            <div><div class="testi-name">Amarjeet Singh</div><div class="testi-role">Knitwear Manufacturer, Noida</div></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Best price in Delhi NCR for Jack machines. The team helped us set up our entire production line — from cutting to finishing. Very professional and knowledgeable."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">S</div>
+            <div><div class="testi-name">Suresh Kumar</div><div class="testi-role">Garment Factory Owner, Gurgaon</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INLINE INQUIRY CTA -->
+  <section style="background:var(--navy);padding:60px 20px;text-align:center;">
+    <div class="section-inner">
+      <div class="section-tag" style="background:rgba(200,148,26,0.2);color:var(--gold-light);">Get In Touch</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:36px;color:var(--white);margin:14px 0 16px;">Ready to Upgrade Your Production Line?</h2>
+      <p style="font-size:17px;color:rgba(255,255,255,0.7);max-width:560px;margin:0 auto 32px;">Talk to our experts today. We'll recommend the right machines for your fabric, production volume, and budget — completely free.</p>
+      <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+        <button class="btn-primary" onclick="showPage('contact')"><i class="fas fa-paper-plane"></i> Send Inquiry</button>
+        <a href="tel:9811100482" class="btn-outline"><i class="fas fa-phone"></i> 98111 00482</a>
+        <a href="https://wa.me/919266861448" target="_blank" class="btn-outline" style="border-color:#25D366;color:#25D366;"><i class="fab fa-whatsapp"></i> WhatsApp Chat</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══ PRODUCTS PAGE ══ -->
+<div id="page-products" class="page">
+  <div class="page-hero">
+    <div class="breadcrumb"><a onclick="showPage('home')">Home</a> › All Products</div>
+    <h1>Our Product Range</h1>
+    <p>Complete lineup of Jack industrial sewing machines and garment machinery for every production need.</p>
   </div>
+  <section class="product-listing">
+    <div class="section-inner">
+      <div class="cat-grid" style="margin-bottom:48px;">
+        <div class="cat-card" onclick="showProductCat('jack-sewing')"><div class="cat-icon"><i class="fas fa-cog"></i></div><h3>Jack Sewing Machine</h3><p>Computerized & direct-drive models</p><div class="cat-count">↗ 10+ Models</div></div>
+        <div class="cat-card" onclick="showProductCat('industrial-sewing')"><div class="cat-icon"><i class="fas fa-industry"></i></div><h3>Industrial Sewing Machine</h3><p>Heavy-duty & high-speed models</p><div class="cat-count">↗ 5+ Models</div></div>
+        <div class="cat-card" onclick="showProductCat('stitching')"><div class="cat-icon"><i class="fas fa-pen-nib"></i></div><h3>Stitching Machine</h3><p>Single & chain stitch models</p><div class="cat-count">↗ 4+ Models</div></div>
+        <div class="cat-card" onclick="showProductCat('overlock')"><div class="cat-icon"><i class="fas fa-circle-notch"></i></div><h3>Overlock Machine</h3><p>4-thread & 5-thread overlock</p><div class="cat-count">↗ 5+ Models</div></div>
+        <div class="cat-card" onclick="showProductCat('interlock')"><div class="cat-icon"><i class="fas fa-link"></i></div><h3>Interlock Machine</h3><p>For knit & stretchable fabrics</p><div class="cat-count">↗ 4+ Models</div></div>
+        <div class="cat-card" onclick="showProductCat('button-hole')"><div class="cat-icon"><i class="fas fa-dot-circle"></i></div><h3>Button Hole Machine</h3><p>Automatic & eyelet buttonhole</p><div class="cat-count">↗ 4+ Models</div></div>
+        <div class="cat-card" onclick="showProductCat('bartack')"><div class="cat-icon"><i class="fas fa-bars"></i></div><h3>Bartack Machine</h3><p>Computerized bartack systems</p><div class="cat-count">↗ 3+ Models</div></div>
+        <div class="cat-card" onclick="showProductCat('smocking')"><div class="cat-icon"><i class="fas fa-wave-square"></i></div><h3>Smocking Machine</h3><p>Multi-needle decorative smocking</p><div class="cat-count">↗ 3+ Models</div></div>
+        <div class="cat-card" onclick="showProductCat('cutting')"><div class="cat-icon"><i class="fas fa-cut"></i></div><h3>Cutting Machine</h3><p>Band knife, straight knife & auto layer</p><div class="cat-count">↗ 6+ Models</div></div>
+        <div class="cat-card" onclick="showProductCat('needle-detector')"><div class="cat-icon"><i class="fas fa-search"></i></div><h3>Needle Detector Machine</h3><p>Quality control for export compliance</p><div class="cat-count">↗ 2+ Models</div></div>
+        <div class="cat-card" onclick="showProductCat('pressing')"><div class="cat-icon"><i class="fas fa-fire"></i></div><h3>Pressing Machine</h3><p>Continuous fusing & finishing</p><div class="cat-count">↗ 2+ Models</div></div>
+        <div class="cat-card" onclick="showProductCat('special')"><div class="cat-icon"><i class="fas fa-star"></i></div><h3>Special Purpose Machine</h3><p>Template, feed-off-arm & more</p><div class="cat-count">↗ 8+ Models</div></div>
+      </div>
+    </div>
+  </section>
+</div>
 
-  <div class="product-card">
-    <img src="images/product2.png">
-    <h3>Jack A2C Lockstitch</h3>
-    <p>Suitable for light to heavy fabrics</p>
-    <a href="#" class="btn">Get Latest Price</a>
+<!-- ══ PRODUCT CATEGORY PAGE ══ -->
+<div id="page-product-cat" class="page">
+  <div class="page-hero">
+    <div class="breadcrumb"><a onclick="showPage('home')">Home</a> › <a onclick="showPage('products')">Products</a> › <span id="cat-name-breadcrumb">Category</span></div>
+    <h1 id="cat-page-title">Products</h1>
+    <p id="cat-page-desc">Browse our complete selection of machines.</p>
   </div>
+  <section class="product-listing">
+    <div class="section-inner">
+      <div class="prod-list-grid" id="cat-products-grid"></div>
+      <div class="center mt-40">
+        <button class="btn-primary" onclick="showPage('contact')"><i class="fas fa-paper-plane"></i> Get Quote for These Machines</button>
+      </div>
+    </div>
+  </section>
+</div>
 
-</section>
+<!-- ══ FABRIC GUIDE PAGE ══ -->
+<div id="page-fabric-guide" class="page">
+  <div class="page-hero">
+    <div class="breadcrumb"><a onclick="showPage('home')">Home</a> › Fabric Guide</div>
+    <h1>Fabric & Machine Guide</h1>
+    <p>Find the right industrial sewing machine for your fabric type and production needs — expert recommendations for every garment category.</p>
+  </div>
+  <section>
+    <div class="section-inner">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;" id="fabric-guide-full"></div>
+      <div style="background:var(--navy);border-radius:16px;padding:40px;margin-top:48px;text-align:center;">
+        <h3 style="font-family:'Playfair Display',serif;font-size:26px;color:var(--white);margin-bottom:12px;">Still Not Sure? Talk to Our Experts</h3>
+        <p style="color:rgba(255,255,255,0.7);font-size:16px;max-width:500px;margin:0 auto 24px;">Our team has 25+ years of experience guiding garment factories to the right machines. Get free advice — no obligation.</p>
+        <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;">
+          <a href="tel:9811100482" class="btn-primary"><i class="fas fa-phone"></i> 98111 00482</a>
+          <a href="https://wa.me/919266861448" target="_blank" class="btn-outline" style="border-color:#25D366;color:#25D366;"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 
-<!-- GUIDE -->
-<section class="guide">
-  <h2>Which Machine Do You Need?</h2>
-  <ul>
-    <li>T-Shirts → Interlock Machine</li>
-    <li>Jeans → Heavy Duty Lockstitch</li>
-    <li>Export Units → Automatic Machines</li>
-  </ul>
-</section>
+<!-- ══ ABOUT PAGE ══ -->
+<div id="page-about" class="page">
+  <div class="page-hero">
+    <div class="breadcrumb"><a onclick="showPage('home')">Home</a> › About Us</div>
+    <h1>About Vishal Sewtech</h1>
+    <p>Delhi NCR's trusted name in industrial sewing machines since 1999.</p>
+  </div>
+  <section>
+    <div class="section-inner">
+      <div class="about-wrap">
+        <div class="about-visual">
+          <div class="about-img-box">
+            <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="20" y="80" width="160" height="50" rx="6" fill="rgba(200,148,26,0.15)" stroke="rgba(200,148,26,0.4)" stroke-width="1.5"/>
+              <rect x="30" y="50" width="100" height="40" rx="5" fill="rgba(200,148,26,0.1)" stroke="rgba(200,148,26,0.4)" stroke-width="1.5"/>
+              <rect x="35" y="20" width="18" height="40" rx="4" fill="rgba(200,148,26,0.1)" stroke="rgba(200,148,26,0.35)" stroke-width="1"/>
+              <circle cx="44" cy="17" r="11" fill="rgba(200,148,26,0.08)" stroke="rgba(200,148,26,0.5)" stroke-width="1.5"/>
+              <circle cx="44" cy="17" r="5" fill="rgba(200,148,26,0.3)"/>
+              <rect x="140" y="45" width="38" height="50" rx="5" fill="rgba(200,148,26,0.1)" stroke="rgba(200,148,26,0.35)" stroke-width="1"/>
+              <line x1="70" y1="90" x2="70" y2="130" stroke="rgba(200,148,26,0.6)" stroke-width="1.5"/>
+              <circle cx="70" cy="134" r="4" fill="rgba(200,148,26,0.5)"/>
+            </svg>
+          </div>
+          <div class="about-stat-overlay">
+            <div class="num">1999</div>
+            <div class="lbl">Est. Year</div>
+          </div>
+        </div>
+        <div class="about-content">
+          <div class="section-tag">Our Story</div>
+          <h2>25 Years of Industrial Sewing Excellence</h2>
+          <p>Incorporated in 1999 in New Delhi, <strong>Vishal Sewtech</strong> has grown from a small trading firm into one of Delhi NCR's most trusted distributors of industrial sewing machinery. We specialise in importing and supplying premium Jack brand machines from China — known worldwide for precision engineering and reliability.</p>
+          <p>Our clientele includes export houses, domestic garment factories, and boutique production units across Delhi, Noida, Gurgaon, Faridabad and Ghaziabad. We take pride in not just selling machines, but in being a long-term technology partner for our clients' production lines.</p>
+          <p>With a dedicated team of technical experts and a comprehensive after-sales service network, Vishal Sewtech ensures that every machine we sell performs at peak efficiency — day after day, season after season.</p>
+          <div class="about-points">
+            <div class="about-point"><i class="fas fa-check-circle"></i><span>Sole Proprietorship firm — personally managed for highest accountability</span></div>
+            <div class="about-point"><i class="fas fa-check-circle"></i><span>GST Registered: 09AGEPK7293D1Z8</span></div>
+            <div class="about-point"><i class="fas fa-check-circle"></i><span>Authorised Jack Brand distributor for Delhi NCR</span></div>
+            <div class="about-point"><i class="fas fa-check-circle"></i><span>Full range of spare parts and accessories stocked locally</span></div>
+            <div class="about-point"><i class="fas fa-check-circle"></i><span>On-site installation, demo, and staff training provided</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section style="background:var(--light);">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-tag">Our Presence</div>
+        <h2>Serving Delhi NCR's Garment Belt</h2>
+        <p>We cover all the key industrial and garment manufacturing zones across the National Capital Region.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:20px;text-align:center;">
+          <div style="font-size:28px;color:var(--gold);margin-bottom:8px;"><i class="fas fa-map-marker-alt"></i></div>
+          <div style="font-weight:700;color:var(--navy);font-size:15px;">Delhi</div>
+          <div style="font-size:13px;color:var(--gray);margin-top:4px;">Okhla, Wazirpur, Narela</div>
+        </div>
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:20px;text-align:center;">
+          <div style="font-size:28px;color:var(--gold);margin-bottom:8px;"><i class="fas fa-map-marker-alt"></i></div>
+          <div style="font-weight:700;color:var(--navy);font-size:15px;">Noida / Gr. Noida</div>
+          <div style="font-size:13px;color:var(--gray);margin-top:4px;">Sector 63, Phase 2</div>
+        </div>
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:20px;text-align:center;">
+          <div style="font-size:28px;color:var(--gold);margin-bottom:8px;"><i class="fas fa-map-marker-alt"></i></div>
+          <div style="font-weight:700;color:var(--navy);font-size:15px;">Gurgaon</div>
+          <div style="font-size:13px;color:var(--gray);margin-top:4px;">Udyog Vihar, Manesar</div>
+        </div>
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:20px;text-align:center;">
+          <div style="font-size:28px;color:var(--gold);margin-bottom:8px;"><i class="fas fa-map-marker-alt"></i></div>
+          <div style="font-weight:700;color:var(--navy);font-size:15px;">Faridabad / Gzb</div>
+          <div style="font-size:13px;color:var(--gray);margin-top:4px;">IMT Faridabad, Raj Nagar</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 
-<!-- CONTACT -->
-<section class="contact">
-  <h2>Get in Touch</h2>
-  <form>
-    <input type="text" placeholder="Name">
-    <input type="tel" placeholder="Phone">
-    <textarea placeholder="Requirement"></textarea>
-    <button>Submit</button>
-  </form>
-</section>
+<!-- ══ CONTACT PAGE ══ -->
+<div id="page-contact" class="page">
+  <div class="page-hero">
+    <div class="breadcrumb"><a onclick="showPage('home')">Home</a> › Contact Us</div>
+    <h1>Get In Touch</h1>
+    <p>Have a requirement? Reach out and our experts will help you find the right machine within your budget.</p>
+  </div>
+  <section class="inquiry-section">
+    <div class="section-inner">
+      <div class="inquiry-wrap">
+        <div class="inquiry-form-box">
+          <h2>Send Us an Inquiry</h2>
+          <p>Fill in your requirements and we'll get back to you within 24 hours.</p>
+          <div class="form-row">
+            <div class="form-group"><label>Your Name *</label><input type="text" placeholder="Enter your full name" id="f-name"></div>
+            <div class="form-group"><label>Phone Number *</label><input type="tel" placeholder="Your mobile number" id="f-phone"></div>
+          </div>
+          <div class="form-group"><label>Email Address</label><input type="email" placeholder="Your email address" id="f-email"></div>
+          <div class="form-group"><label>Company / Factory Name</label><input type="text" placeholder="Your business name" id="f-company"></div>
+          <div class="form-group">
+            <label>Machine Category of Interest</label>
+            <select id="f-category">
+              <option value="">-- Select Machine Type --</option>
+              <option>Jack Sewing Machine</option>
+              <option>Industrial Sewing Machine</option>
+              <option>Overlock Machine</option>
+              <option>Interlock Machine</option>
+              <option>Stitching Machine</option>
+              <option>Button Hole Machine</option>
+              <option>Bartack Machine</option>
+              <option>Smocking Machine</option>
+              <option>Cutting Machine</option>
+              <option>Needle Detector Machine</option>
+              <option>Pressing Machine</option>
+              <option>Special Purpose Machine</option>
+              <option>Not Sure – Need Guidance</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Fabric Type</label>
+              <select id="f-fabric">
+                <option value="">-- Select Fabric --</option>
+                <option>Cotton / Woven</option>
+                <option>Knit / Stretchable</option>
+                <option>Denim / Heavy</option>
+                <option>Leather / Synthetic</option>
+                <option>Embroidery / Decorative</option>
+                <option>Multiple Types</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Quantity Required</label>
+              <select id="f-qty">
+                <option value="">-- Quantity --</option>
+                <option>1–5 Machines</option>
+                <option>6–15 Machines</option>
+                <option>16–30 Machines</option>
+                <option>30+ Machines</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group"><label>Message / Requirements</label><textarea id="f-message" placeholder="Tell us about your production requirements, current challenges, or any specific machine model you're looking for..."></textarea></div>
+          <button class="btn-submit" onclick="submitInquiry()"><i class="fas fa-paper-plane"></i> Send Inquiry</button>
+        </div>
+        <div class="contact-info-panel">
+          <h3>Contact Information</h3>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div class="ci-text">
+              <div class="label">Call Us</div>
+              <div class="value"><a href="tel:9811100482">+91 98111 00482</a></div>
+              <div class="value"><a href="tel:9266861448">+91 92668 61448</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="ci-text">
+              <div class="label">WhatsApp</div>
+              <div class="value"><a href="https://wa.me/919266861448" target="_blank">+91 92668 61448</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="ci-text">
+              <div class="label">Address</div>
+              <div class="value" style="font-size:15px;font-weight:400;line-height:1.6;">Basement-I, H-53, Sector-63,<br>Noida – 201301,<br>Gautam Buddha Nagar, UP</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+            <div class="ci-text">
+              <div class="label">Business Hours</div>
+              <div class="value" style="font-size:15px;font-weight:400;">Mon – Sat: 9:30 AM – 6:30 PM<br>Sunday: By Appointment</div>
+            </div>
+          </div>
+          <div class="wa-cta">
+            <h4><i class="fab fa-whatsapp"></i>&nbsp;Prefer WhatsApp?</h4>
+            <p>Send us your requirements directly on WhatsApp. Our team responds quickly!</p>
+            <a href="https://wa.me/919266861448?text=Hi%2C%20I%20am%20interested%20in%20Jack%20industrial%20sewing%20machines.%20Please%20share%20details." target="_blank" class="btn-wa-big"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/919266861448" class="float">💬</a>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="data:image/png;base64,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" alt="Vishal Sewtech Logo" style="height:44px;width:auto;object-fit:contain;filter:brightness(10);margin-bottom:14px;display:block;">
+        <p>Authorised dealer of Jack Industrial Sewing Machines in Delhi NCR. Serving export houses and garment factories since 1999 with genuine machines, expert guidance, and reliable after-sales service.</p>
+        <div style="margin-top:18px;display:flex;gap:10px;">
+          <a href="https://wa.me/919266861448" target="_blank" style="width:36px;height:36px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:16px;"><i class="fab fa-whatsapp"></i></a>
+          <a href="tel:9811100482" style="width:36px;height:36px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:14px;"><i class="fas fa-phone"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Quick Links</div>
+        <ul class="footer-links">
+          <li><a onclick="showPage('home')">Home</a></li>
+          <li><a onclick="showPage('products')">All Products</a></li>
+          <li><a onclick="showPage('fabric-guide')">Fabric Guide</a></li>
+          <li><a onclick="showPage('about')">About Us</a></li>
+          <li><a onclick="showPage('contact')">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Top Products</div>
+        <ul class="footer-links">
+          <li><a onclick="showProductCat('jack-sewing')">Jack Sewing Machine</a></li>
+          <li><a onclick="showProductCat('overlock')">Overlock Machine</a></li>
+          <li><a onclick="showProductCat('interlock')">Interlock Machine</a></li>
+          <li><a onclick="showProductCat('button-hole')">Button Hole Machine</a></li>
+          <li><a onclick="showProductCat('bartack')">Bartack Machine</a></li>
+          <li><a onclick="showProductCat('cutting')">Cutting Machine</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Contact Us</div>
+        <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Basement-I, H-53, Sector-63, Noida – 201301, UP</span></div>
+        <div class="footer-contact-item"><i class="fas fa-phone"></i><span><a href="tel:9811100482" style="color:rgba(255,255,255,0.7);text-decoration:none;">+91 98111 00482</a></span></div>
+        <div class="footer-contact-item"><i class="fas fa-phone"></i><span><a href="tel:9266861448" style="color:rgba(255,255,255,0.7);text-decoration:none;">+91 92668 61448</a></span></div>
+        <div class="footer-contact-item"><i class="fab fa-whatsapp"></i><span><a href="https://wa.me/919266861448" target="_blank" style="color:#25D366;text-decoration:none;">WhatsApp: 92668 61448</a></span></div>
+        <div class="footer-contact-item"><i class="fas fa-id-card"></i><span>GST: 09AGEPK7293D1Z8</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Vishal Sewtech. All Rights Reserved. | Authorised Jack Machines Dealer – Delhi NCR</p>
+      <p style="color:rgba(255,255,255,0.3);">Serving Delhi · Noida · Gurgaon · Faridabad · Ghaziabad</p>
+    </div>
+  </div>
+</footer>
 
+<!-- FLOATING BUTTONS -->
+<div class="floating-btns">
+  <a href="https://wa.me/919266861448?text=Hi%2C%20I%20am%20interested%20in%20Jack%20industrial%20sewing%20machines." target="_blank" class="float-btn float-wa" title="WhatsApp">
+    <span class="float-tooltip">Chat on WhatsApp</span>
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="tel:9811100482" class="float-btn float-call" title="Call Us">
+    <span class="float-tooltip">Call: 98111 00482</span>
+    <i class="fas fa-phone"></i>
+  </a>
+</div>
+
+<!-- INQUIRY MODAL -->
+<div class="modal-overlay" id="inquiryModal" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('inquiryModal').classList.remove('open')">✕</button>
+    <h3>Quick Inquiry</h3>
+    <div class="prod-name" id="modal-prod-name"></div>
+    <div class="form-group"><label>Your Name *</label><input type="text" placeholder="Your name" id="m-name"></div>
+    <div class="form-group"><label>Phone Number *</label><input type="tel" placeholder="Your phone number" id="m-phone"></div>
+    <div class="form-group"><label>Message</label><textarea id="m-message" style="min-height:80px;" placeholder="Any specific requirements..."></textarea></div>
+    <button class="btn-submit" onclick="submitModal()"><i class="fas fa-paper-plane"></i> Send Inquiry</button>
+  </div>
+</div>
+
+<!-- SUCCESS TOAST -->
+<div id="toast" style="position:fixed;bottom:100px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--navy);color:white;padding:14px 28px;border-radius:10px;font-weight:600;opacity:0;transition:all .35s;z-index:2000;pointer-events:none;">
+  <i class="fas fa-check-circle" style="color:var(--gold);margin-right:8px;"></i> Inquiry sent! We'll contact you shortly.
+</div>
+
+<script>
+// ── DATA ──
+const products = {
+  'jack-sewing': {
+    name: 'Jack Sewing Machine',
+    desc: 'Computerized and direct-drive sewing machines from Jack — the world\'s #1 industrial sewing machine brand by volume.',
+    items: [
+      {name:'JK-58450 Computerized Double Needle Lockstitch',cat:'Jack Sewing',desc:'High-speed double-needle computerized lockstitch machine for denim, jeans & heavy fabrics. Auto-trimmer, auto foot lift.',fabrics:['Denim','Heavy Cotton','Canvas'],badge:'Bestseller'},
+      {name:'Jack A4 Direct Drive Lockstitch Machine',cat:'Jack Sewing',desc:'Energy-saving direct drive motor with no belt. High speed, low noise, computerized control panel. Ideal for shirts & formal wear.',fabrics:['Woven','Cotton','Linen'],badge:'Top Seller'},
+      {name:'Jack F5 Direct Drive Single Needle Lockstitch',cat:'Jack Sewing',desc:'Flagship single-needle machine with direct drive motor, auto backstitch, automatic thread trimmer. For all woven fabrics.',fabrics:['Cotton','Polyester','Woven'],badge:''},
+      {name:'JK-2280 Zig Zag Machine',cat:'Jack Sewing',desc:'Industrial zig-zag sewing machine for elastic attachment, embroidery decorative stitching and overlapping seams.',fabrics:['Knit','Elastic','Decorative'],badge:''},
+      {name:'Jack A5E Single Needle UBT AMH',cat:'Jack Sewing',desc:'Advanced automatic machine with multi-layer hemming capability. Unlocks potential across all fabric types.',fabrics:['All Fabrics'],badge:'New'},
+      {name:'JK-5558G Edge Cutter Lockstitch',cat:'Jack Sewing',desc:'Single-needle lockstitch with built-in edge cutter. Ideal for pant bottoms, cuffs and clean-edge finishing.',fabrics:['Cotton','Trousers','Formal Wear'],badge:''},
+    ]
+  },
+  'industrial-sewing': {
+    name: 'Industrial Sewing Machine',
+    desc: 'Heavy-duty industrial sewing machines built for high-volume, continuous production environments.',
+    items: [
+      {name:'H2 Heavy Duty Top & Bottom Feed Lockstitch',cat:'Industrial Sewing',desc:'Heavy-duty machine with top and bottom feed for thick, multi-layer fabrics. Perfect for canvas, upholstery and leather.',fabrics:['Leather','Canvas','Heavy Denim'],badge:'Heavy Duty'},
+      {name:'Computerised Single Needle Lock Stitch Machine',cat:'Industrial Sewing',desc:'Fully computerized single needle lockstitch with programmable patterns, auto-trim and backstitch. For all fabric types.',fabrics:['All Fabrics'],badge:''},
+      {name:'JK-20U Zig Zag Sewing Machine',cat:'Industrial Sewing',desc:'Industrial zig-zag for elastics, appliqué and decorative stitching. Variable stitch width and length.',fabrics:['Knit','Elastic','Embroidery'],badge:''},
+      {name:'Post Bed Lockstitch Sewing Machine',cat:'Industrial Sewing',desc:'Post-bed configuration for stitching 3D garment components — shoes, bags, gloves, and cylindrical items.',fabrics:['Leather','Bags','Shoes'],badge:'Specialty'},
+    ]
+  },
+  'stitching': {
+    name: 'Stitching Machine',
+    desc: 'Precision stitching machines for single and chain stitch applications across all fabric categories.',
+    items: [
+      {name:'Jack F5 Direct Drive Single Needle Lockstitch',cat:'Stitching',desc:'Industry-leading energy-efficient stitching machine with direct drive. Auto thread trim and foot lift.',fabrics:['Cotton','Woven','Polyester'],badge:'Top Seller'},
+      {name:'JK-8558G Chain Stitching Machine',cat:'Stitching',desc:'Industrial chain stitch for jeans, bags, and heavy applications where strong single-thread seams are needed.',fabrics:['Denim','Canvas','Bags'],badge:''},
+      {name:'JK-5558G Single Needle Edge Cutter',cat:'Stitching',desc:'Combines lockstitch with a built-in edge cutter — clean, professional seams in a single pass.',fabrics:['Cotton','Formal Wear'],badge:'2-in-1'},
+      {name:'Feed Off Arm Sewing Machine',cat:'Stitching',desc:'For cylindrical items — jeans inseams, sleeve seams, sock and sportswear tubular assembly.',fabrics:['Denim','Sportswear','Tubes'],badge:''},
+    ]
+  },
+  'overlock': {
+    name: 'Overlock Machine',
+    desc: 'Professional overlock machines for clean, durable edge finishing on all fabric types.',
+    items: [
+      {name:'E4s Jack Overlock Sewing Machine',cat:'Overlock',desc:'4-thread overlock for general garment production. High-speed, reliable, easy threading with colour-coded guides.',fabrics:['Cotton','Knit','Woven'],badge:''},
+      {name:'C5C Advanced Fully Computerized Overlock',cat:'Overlock',desc:'Fully computerized 5-thread safety stitch overlock. Auto-tension, auto-trim, programmable settings.',fabrics:['Knit','Stretch','Premium'],badge:'Computerized'},
+      {name:'C4 Fully Automatic Overlock Machine',cat:'Overlock',desc:'4-thread fully automatic overlock with auto-threading and auto-tension for maximum productivity.',fabrics:['Cotton','Polyester','Mixed'],badge:'Bestseller'},
+      {name:'JK-797TDI Cylinder-Bed Overlock',cat:'Overlock',desc:'Small cylinder-bed variable top feed power-saving overlock. For tubular/cylindrical items and knitwear.',fabrics:['Knitwear','T-shirts','Sportswear'],badge:'Power Saving'},
+    ]
+  },
+  'interlock': {
+    name: 'Interlock Machine',
+    desc: 'Interlock machines for stretch fabrics, knitwear, T-shirts and sportswear production.',
+    items: [
+      {name:'Jack W4D Interlock Sewing Machine',cat:'Interlock',desc:'4-needle interlock for flat seaming on sportswear, underwear and stretch fabrics. Soft, flat seams.',fabrics:['Lycra','Jersey','Sportswear'],badge:'Top Seller'},
+      {name:'JK-8009VCDI Interlock Jack Machine',cat:'Interlock',desc:'Variable cover stitch interlock for waistbands, hems and decorative cover stitching on knitwear.',fabrics:['Knitwear','Athleisure'],badge:''},
+      {name:'K5D Cylinder Bed Flat Lock Machine',cat:'Interlock',desc:'Cylinder-bed flat lock for tubular items — seamless underwear, socks and circular knit applications.',fabrics:['Tubular','Socks','Underwear'],badge:'Specialty'},
+      {name:'JK-1790 Electronic Buttonhole (Interlock)',cat:'Interlock',desc:'Electronic precision interlock with automatic function control for consistent results.',fabrics:['All Knits'],badge:''},
+    ]
+  },
+  'button-hole': {
+    name: 'Button Hole Machine',
+    desc: 'Automatic and computerized buttonhole machines for shirts, trousers, jackets and export garments.',
+    items: [
+      {name:'JK-T781G Button Hole Machine',cat:'Button Hole',desc:'Standard industrial buttonhole machine for shirts, formal trousers, and blouses. Consistent hole size and stitch quality.',fabrics:['Shirts','Trousers','Formal'],badge:'Standard'},
+      {name:'JK-T9820G Eyelet Button Hole Machine',cat:'Button Hole',desc:'Eyelet buttonhole for denim jeans, coats and trousers requiring a reinforced round-eye buttonhole.',fabrics:['Denim','Jackets','Coats'],badge:'Eyelet'},
+      {name:'JK-T1903G Button Attaching Machine with Auto Feeder',cat:'Button Hole',desc:'Automatic button feeder with computerized attaching machine. High-speed, consistent attachment for mass production.',fabrics:['All Fabrics'],badge:'Auto Feeder'},
+    ]
+  },
+  'bartack': {
+    name: 'Bartack Machine',
+    desc: 'Computerized bartack machines for reinforcing stress points on garments and accessories.',
+    items: [
+      {name:'JK-T1900G Multi-Function Computerized Bartack',cat:'Bartack',desc:'Multi-function computerized bartack for belt loops, pocket openings, zipper base. 50+ programmable patterns.',fabrics:['Denim','Trousers','Workwear'],badge:'Bestseller'},
+      {name:'JK-T1900A Electronic Bartack Machine',cat:'Bartack',desc:'Electronic bartack for general garment reinforcement. Reliable, consistent and easy to operate.',fabrics:['Cotton','Polyester','Mixed'],badge:''},
+    ]
+  },
+  'smocking': {
+    name: 'Smocking Machine',
+    desc: 'Multi-needle smocking machines for decorative embroidery and textured stitching on fabric.',
+    items: [
+      {name:'Multi Needle Smocking Stitching Machine',cat:'Smocking',desc:'Multi-needle smocking for creating honeycomb, cable and decorative smocking patterns on fabric.',fabrics:['Cotton','Silk','Embroidery'],badge:''},
+      {name:'33 Needle Flat Bed Smocking Machine',cat:'Smocking',desc:'33-needle flat-bed configuration for wide smocking patterns and decorative fabric texturing.',fabrics:['Cotton','Lawn','Voile'],badge:'Wide Bed'},
+      {name:'Needles Smocking Machine',cat:'Smocking',desc:'Standard needle smocking machine for regular smock patterns in children\'s wear, ethnic garments and fashion.',fabrics:['Children\'s Wear','Ethnic'],badge:''},
+    ]
+  },
+  'cutting': {
+    name: 'Cutting Machine',
+    desc: 'Industrial fabric cutting machines for precision cutting in bulk garment production.',
+    items: [
+      {name:'Multi Ply Cutter E80',cat:'Cutting',desc:'High-powered multi-ply straight knife cutter for cutting multiple fabric layers simultaneously. For large-scale operations.',fabrics:['All Fabrics'],badge:'High Volume'},
+      {name:'T3 Fabric Cutting Machine',cat:'Cutting',desc:'Precision fabric cutting machine with smooth blade action. For accurate pattern cutting in medium production.',fabrics:['Cotton','Polyester','Woven'],badge:''},
+      {name:'Band Knife Cutting Machine',cat:'Cutting',desc:'Band knife for precision curve cutting and die-cutting — ideal for accessories, pockets and shaped panels.',fabrics:['Curves','Accessories'],badge:'Precision'},
+      {name:'Cloth Cutting Machine',cat:'Cutting',desc:'Standard cloth cutting machine for straight and basic pattern cutting. Easy to operate and maintain.',fabrics:['All Fabrics'],badge:''},
+      {name:'Auto Layer Spreader with Cutter',cat:'Cutting',desc:'Automated fabric spreading and cutting system. Dramatically reduces manual effort and improves accuracy.',fabrics:['All Fabrics'],badge:'Automated'},
+      {name:'Rib Cutting Machine',cat:'Cutting',desc:'Specialized cutter for rib fabric — precise cutting for cuffs, waistbands and collars.',fabrics:['Rib Fabric','Knitwear'],badge:'Specialty'},
+    ]
+  },
+  'needle-detector': {
+    name: 'Needle Detector Machine',
+    desc: 'Essential quality control equipment for export compliance — detects broken needles in finished garments.',
+    items: [
+      {name:'Needle Detector Machine VMAC',cat:'Needle Detector',desc:'High-sensitivity needle detector for export compliance. Detects broken needles, pins and metal fragments in garments.',fabrics:['All Garments'],badge:'Export Essential'},
+      {name:'F4 Four Needle Attaching Machine',cat:'Needle Detector',desc:'4-needle attaching machine with precision needle placement for decorative and functional applications.',fabrics:['All Fabrics'],badge:''},
+    ]
+  },
+  'pressing': {
+    name: 'Pressing Machine',
+    desc: 'Industrial pressing and fusing machines for garment finishing and interlining attachment.',
+    items: [
+      {name:'Continuous Fusing Machine',cat:'Pressing',desc:'Continuous belt fusing press for attaching interlining to collars, cuffs and facings. Consistent temperature and pressure.',fabrics:['Shirts','Suits','Formal Wear'],badge:'Industrial'},
+      {name:'Jack Seam Sealing Machine',cat:'Pressing',desc:'Hot air seam sealing for waterproof garments — tents, outdoor wear, and technical textiles.',fabrics:['Outdoor Wear','Technical Textiles'],badge:'Hot Air'},
+    ]
+  },
+  'special': {
+    name: 'Special Purpose Machine',
+    desc: 'Specialized sewing and finishing machines for unique production requirements.',
+    items: [
+      {name:'M9 Anti-Thread Breakage Template Machine',cat:'Special Purpose',desc:'Template sewing machine with anti-thread-breakage technology. For consistent, repeatable pattern stitching.',fabrics:['All Fabrics'],badge:'Template'},
+      {name:'M5 In-Line Template Machine',cat:'Special Purpose',desc:'In-line template machine for assembly-line production of consistent stitched components.',fabrics:['All Fabrics'],badge:''},
+      {name:'Advanced Fully Automatic Pocket Welting Machine with Laser',cat:'Special Purpose',desc:'Fully automatic pocket welting with integrated laser cutter. Precision pocket opening for trousers and jackets.',fabrics:['Trousers','Jackets','Denim'],badge:'Auto + Laser'},
+      {name:'Carpet Overedging Machine',cat:'Special Purpose',desc:'Heavy-duty overedging for carpets, rugs and floor coverings. High-thread-count, durable edge binding.',fabrics:['Carpet','Rugs'],badge:'Heavy Duty'},
+      {name:'Desktop Auto Thread Winding Machine',cat:'Special Purpose',desc:'Automatic bobbin and thread winding machine. Saves time and ensures consistent thread tension.',fabrics:['Accessories'],badge:''},
+      {name:'Jack HDPE Pipe Jointing Machine',cat:'Special Purpose',desc:'4-stitch 6-thread jointing machine with curved arm for non-woven and pipe/bag stitching applications.',fabrics:['Non-woven','HDPE'],badge:'Industrial'},
+    ]
+  }
+};
+
+const fabricGuide = [
+  {fabric:'Cotton & Woven', icon:'fa-tshirt', color:'#e8f4fd', items:[
+    {type:'Main Seam',machine:'Jack F5 / A4 Direct Drive Lockstitch'},
+    {type:'Edge Finishing',machine:'E4s / C4 Overlock Machine'},
+    {type:'Buttonholes',machine:'JK-T781G Button Hole Machine'},
+    {type:'Bartack',machine:'JK-T1900G Computerized Bartack'},
+    {type:'Cutting',machine:'Multi Ply Cutter E80'},
+  ]},
+  {fabric:'Denim & Heavy Fabric', icon:'fa-jeans', color:'#fff4e0', items:[
+    {type:'Main Seam',machine:'H2 Heavy Duty Lockstitch'},
+    {type:'Double Needle',machine:'JK-58450 Computerized DN Lockstitch'},
+    {type:'Bartack (Belt Loops)',machine:'JK-T1900G Bartack Machine'},
+    {type:'Eyelet Buttonhole',machine:'JK-T9820G Eyelet Button Hole'},
+    {type:'Cutting',machine:'Band Knife / Multi Ply Cutter'},
+  ]},
+  {fabric:'Knit & Stretchable', icon:'fa-running', color:'#f0fff4', items:[
+    {type:'Main Seam (stretch)',machine:'Jack W4D Interlock Machine'},
+    {type:'Edge Overlock',machine:'C4 / C5C Fully Auto Overlock'},
+    {type:'Collar/Waistband',machine:'JK-8009VCDI Cover Stitch Interlock'},
+    {type:'Flat Seaming',machine:'K5D Cylinder Bed Flat Lock'},
+    {type:'Hemming',machine:'Chain Stitching Machine'},
+  ]},
+  {fabric:'Silk, Chiffon & Delicate', icon:'fa-feather', color:'#fdf0ff', items:[
+    {type:'Main Seam',machine:'Jack A4 / F5 (fine needle setting)'},
+    {type:'Edge Finishing',machine:'3-Thread Overlock (low tension)'},
+    {type:'Embroidery',machine:'Zig Zag / Smocking Machine'},
+    {type:'Buttonholes',machine:'JK-T781G (fine pitch setting)'},
+  ]},
+  {fabric:'Leather & Synthetic', icon:'fa-vest', color:'#fff5f5', items:[
+    {type:'Main Seam',machine:'H2 Heavy Duty Top & Bottom Feed'},
+    {type:'Post-Bed Stitching',machine:'Post Bed Lockstitch Machine'},
+    {type:'Edge Binding',machine:'Carpet Overedging Machine'},
+  ]},
+  {fabric:'Technical & Outdoor Wear', icon:'fa-hiking', color:'#e8fff4', items:[
+    {type:'Main Seam',machine:'Jack A5E / Heavy Duty Lockstitch'},
+    {type:'Seam Sealing',machine:'Jack Hot Air Seam Sealing Machine'},
+    {type:'Needle Detection',machine:'VMAC Needle Detector Machine'},
+    {type:'Cutting',machine:'Auto Layer Spreader with Cutter'},
+  ]},
+];
+
+// ── RENDER ──
+function renderFeatured() {
+  const featured = ['jack-sewing','overlock','interlock','button-hole','bartack','cutting'];
+  const grid = document.getElementById('featured-products');
+  grid.innerHTML = featured.map(cat => {
+    const prod = products[cat].items[0];
+    return prodCard(prod, cat);
+  }).join('');
+}
+
+function prodCard(prod, catKey) {
+  const icons = {
+    'jack-sewing':'fa-cog','industrial-sewing':'fa-industry','stitching':'fa-pen-nib',
+    'overlock':'fa-circle-notch','interlock':'fa-link','button-hole':'fa-dot-circle',
+    'bartack':'fa-bars','smocking':'fa-wave-square','cutting':'fa-cut',
+    'needle-detector':'fa-search','pressing':'fa-fire','special':'fa-star'
+  };
+  const icon = icons[catKey] || 'fa-cog';
+  const badge = prod.badge ? `<div class="prod-badge">${prod.badge}</div>` : '';
+  const tags = prod.fabrics.slice(0,3).map(f => `<span class="fabric-tag">${f}</span>`).join('');
+  return `
+    <div class="prod-card" onclick="openInquiry('${prod.name.replace(/'/g,"\\'")}')">
+      <div class="prod-img">
+        ${badge}
+        <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="15" y="60" width="90" height="35" rx="5" fill="#e8edf5" stroke="#c8941a" stroke-width="1.5"/>
+          <rect x="20" y="38" width="55" height="28" rx="4" fill="#dde3ef" stroke="#c8941a" stroke-width="1.5"/>
+          <rect x="22" y="18" width="10" height="26" rx="3" fill="#dde3ef" stroke="#c8941a" stroke-width="1"/>
+          <circle cx="27" cy="15" r="8" fill="none" stroke="#c8941a" stroke-width="2"/>
+          <circle cx="27" cy="15" r="3" fill="#c8941a"/>
+          <i class="fas ${icon}" style="font-size:32px;color:#c8941a;position:absolute;"></i>
+        </svg>
+        <i class="fas ${icon}" style="position:absolute;font-size:40px;color:rgba(200,148,26,0.25);"></i>
+      </div>
+      <div class="prod-body">
+        <div class="category">${products[catKey]?.name || prod.cat}</div>
+        <h3>${prod.name}</h3>
+        <p>${prod.desc}</p>
+        <div class="fabric-tags">${tags}</div>
+        <button class="btn-inquiry" onclick="openInquiry('${prod.name.replace(/'/g,"\\'")}');event.stopPropagation()">Get Quote / Inquiry</button>
+      </div>
+    </div>`;
+}
+
+function renderCatProducts(catKey) {
+  const cat = products[catKey];
+  if (!cat) return;
+  document.getElementById('cat-name-breadcrumb').textContent = cat.name;
+  document.getElementById('cat-page-title').textContent = cat.name;
+  document.getElementById('cat-page-desc').textContent = cat.desc;
+  const grid = document.getElementById('cat-products-grid');
+  grid.innerHTML = cat.items.map(prod => prodCard(prod, catKey)).join('');
+}
+
+function renderFabricGuide() {
+  const el = document.getElementById('fabric-guide-full');
+  if (!el) return;
+  el.innerHTML = fabricGuide.map(f => `
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:14px;padding:28px;transition:all .25s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+        <div style="width:44px;height:44px;background:var(--navy);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+          <i class="fas ${f.icon}" style="color:var(--gold);font-size:18px;"></i>
+        </div>
+        <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--navy);">${f.fabric}</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        ${f.items.map(item => `
+          <div style="display:flex;align-items:flex-start;gap:10px;background:var(--light);border-radius:8px;padding:10px 14px;">
+            <div style="font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--gray);min-width:100px;margin-top:2px;">${item.type}</div>
+            <div style="font-size:14px;color:var(--navy);font-weight:600;flex:1;">${item.machine}</div>
+          </div>`).join('')}
+      </div>
+      <button onclick="showPage('contact')" style="margin-top:18px;width:100%;background:transparent;border:1.5px solid var(--gold);color:var(--gold);border-radius:8px;padding:10px;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;" onmouseover="this.style.background='var(--gold)';this.style.color='white'" onmouseout="this.style.background='transparent';this.style.color='var(--gold)'">
+        Get Quote for ${f.fabric.split('&')[0].trim()} Machines
+      </button>
+    </div>`).join('');
+}
+
+// ── NAVIGATION ──
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const el = document.getElementById('page-' + pageId);
+  if (el) { el.classList.add('active'); }
+  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+  const navEl = document.getElementById('nav-' + pageId);
+  if (navEl) navEl.classList.add('active');
+  if (pageId === 'fabric-guide') renderFabricGuide();
+  window.scrollTo({top: 0, behavior:'smooth'});
+}
+
+function showProductCat(catKey) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-product-cat').classList.add('active');
+  renderCatProducts(catKey);
+  window.scrollTo({top: 0, behavior:'smooth'});
+}
+
+function toggleMobileMenu() {
+  const m = document.getElementById('mobileMenu');
+  m.style.display = m.style.display === 'none' ? 'block' : 'none';
+}
+
+// ── MODAL ──
+function openInquiry(prodName) {
+  document.getElementById('modal-prod-name').textContent = prodName ? 'Product: ' + prodName : '';
+  document.getElementById('m-name').value = '';
+  document.getElementById('m-phone').value = '';
+  document.getElementById('m-message').value = '';
+  document.getElementById('inquiryModal').classList.add('open');
+}
+
+function closeModal(e) {
+  if (e.target.classList.contains('modal-overlay')) {
+    document.getElementById('inquiryModal').classList.remove('open');
+  }
+}
+
+function submitModal() {
+  const name = document.getElementById('m-name').value.trim();
+  const phone = document.getElementById('m-phone').value.trim();
+  if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
+  document.getElementById('inquiryModal').classList.remove('open');
+  showToast();
+}
+
+function submitInquiry() {
+  const name = document.getElementById('f-name').value.trim();
+  const phone = document.getElementById('f-phone').value.trim();
+  if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
+  showToast();
+}
+
+function showToast() {
+  const t = document.getElementById('toast');
+  t.style.opacity = '1';
+  t.style.transform = 'translateX(-50%) translateY(0)';
+  setTimeout(() => {
+    t.style.opacity = '0';
+    t.style.transform = 'translateX(-50%) translateY(20px)';
+  }, 3500);
+}
+
+// ── INIT ──
+renderFeatured();
+</script>
 </body>
 </html>
